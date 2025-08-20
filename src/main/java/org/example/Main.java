@@ -66,12 +66,14 @@ public class Main {
     static void ex06(){
         int[] notas = new int[5];
         Scanner read = new Scanner(System.in);
+        int soma = 0;
 
         for (int c=0; c<=4; c++){
             int contagem = c + 1;
             System.out.print("Qual a " + contagem + "° nota? ");
             int nota = read.nextInt();
             notas[c] = nota;
+            soma += nota;
         }
 
         for (int c=0; c<=4; c++){
@@ -79,7 +81,8 @@ public class Main {
             System.out.println(contagem + "° nota : " + notas[c]);
         }
 
-
-
+        double media = soma/5.0;
+        System.out.println("Média: " + media);
+        
     }
 }

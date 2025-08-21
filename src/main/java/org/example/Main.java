@@ -1,9 +1,10 @@
 package org.example;
 import java.util.Scanner;
+import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) {
-        ex06();
+        ex08();
     }
 
     static void ex01(){
@@ -83,6 +84,39 @@ public class Main {
 
         double media = soma/5.0;
         System.out.println("Média: " + media);
-        
     }
+    static void ex07() {
+        Scanner read = new Scanner(System.in);
+        read.useLocale(Locale.US);
+
+        System.out.print("Peso (kg): ");
+        double peso = read.nextDouble();
+
+        System.out.print("Altura (m): ");
+        double altura = read.nextDouble();
+
+        double imc = calcularIMC(peso, altura);
+
+        System.out.printf("IMC calculado: %.2f%n", imc);
+    }
+
+    static double calcularIMC(double peso, double altura) {
+        return peso / (altura * altura);
+    }
+    static void ex08() {
+        Scanner read = new Scanner(System.in);
+        System.out.print("Digite o nome completo: ");
+        String nome = read.nextLine();
+
+        int caracteresSemEspaco = nome.replace(" ", "").length();
+
+        String nomeMaiusculo = nome.toUpperCase();
+
+        boolean contemSilva = nome.toLowerCase().contains("silva");
+
+        System.out.println("Número de caracteres: " + caracteresSemEspaco);
+        System.out.println("Maiúsculas: " + nomeMaiusculo);
+        System.out.println("Contém \"Silva\": " + contemSilva);
+    }
+
 }
